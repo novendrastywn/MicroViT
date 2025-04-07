@@ -14,8 +14,8 @@ The Vision Transformer (ViT) has demonstrated state-of-the-art performance in va
 
 
 ## Pre-trained Models
-| Model | Resolution | Param | FLOPs | GPU | CPU | Top-1|
-|:---:|:---:|:---:|:---:| :---:|:---:|:---:|
+| Model | Resolution | Param | FLOPs | GPU | CPU | Top-1| Link |
+|:---:|:---:|:---:|:---:| :---:|:---:|:---:| :---:|
 | MicroViT-S1 | 224 | 6.4  | 0.231 | 17466 | 552 | 72.6 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s1.pth) |
 | MicroViT-S2 | 224 | 10.0 | 0.345 | 14154 | 435 | 74.6 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s2.pth) |
 | MicroViT-S3 | 224 | 16.7 | 0.580 | 9288  | 232 | 77.1 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s3.pth) |
@@ -48,10 +48,10 @@ Download the [ImageNet-1K](http://image-net.org/) dataset and structure the data
       img4.jpeg
 ```
 
-To train SHViT models, follow the respective command below:
+To train MicroViT models, follow the respective command below:
 <details>
 <summary>
-SHViT-S1
+MicroViT-S1
 </summary>
 
 ```
