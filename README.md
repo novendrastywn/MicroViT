@@ -1,4 +1,4 @@
-# SHViT: Single-Head Vision Transformer with Memory Efficient Macro Design
+# MicroViT: A Vision Transformer with Low Complexity Self Attention for Edge Device
 
 This is the official repository of 
 
@@ -14,11 +14,11 @@ The Vision Transformer (ViT) has demonstrated state-of-the-art performance in va
 
 
 ## Pre-trained Models
-| name | resolution | acc | #params | FLOPs | Throughput | model |
+| Model | Resolution | Param | FLOPs | GPU | CPU | Top-1|
 |:---:|:---:|:---:|:---:| :---:|:---:|:---:|
-| MicroViT-1 | 224x224 | 72.8 | 6.3M | 241M | 33489 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s1.pth) |
-| MicroViT-2 | 224x224 | 75.2 | 11.4M | 366M | 26878 | [model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s2.pth) |
-| MicroViT-3 | 224x224 | 77.4 | 14.2M | 601M | 20522 | [model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s3.pth) |
+| MicroViT-S1 | 224 | 6.4  | 0.231 | 17466 | 552 | 72.6 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s1.pth) |
+| MicroViT-S2 | 224 | 10.0 | 0.345 | 14154 | 435 | 74.6 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s2.pth) |
+| MicroViT-S3 | 224 | 16.7 | 0.580 | 9288  | 232 | 77.1 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s3.pth) |
 
 ## Training
 ### Image Classification
