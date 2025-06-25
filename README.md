@@ -20,108 +20,17 @@ The Vision Transformer (ViT) has demonstrated state-of-the-art performance in va
 | MicroViT-S2 | 224 | 10.0 | 0.345 | 14154 | 435 | 74.6 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s2.pth) |
 | MicroViT-S3 | 224 | 16.7 | 0.580 | 9288  | 232 | 77.1 |[model](https://github.com/ysj9909/SHViT/releases/download/v1.0/shvit_s3.pth) |
 
-## Training
-### Image Classification
-
-#### Setup
-```bash
-conda create -n microvit python=3.9
-conda activate microvit
-conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
-pip install -r requirements.txt
-```
-
-#### Dataset Preparation
-
-Download the [ImageNet-1K](http://image-net.org/) dataset and structure the data as follows:
-```
-/path/to/imagenet-1k/
-  train/
-    class1/
-      img1.jpeg
-    class2/
-      img2.jpeg
-  validation/
-    class1/
-      img3.jpeg
-    class2/
-      img4.jpeg
-```
-
-To train MicroViT models, follow the respective command below:
-<details>
-<summary>
-MicroViT-S1
-</summary>
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 --master_port 12345 --use_env main.py --model shvit_s1 --data-path $PATH_TO_IMAGENET --dist-eval --weight-decay 0.025
-```
-</details>
-
-<details>
-<summary>
-SHViT-S2
-</summary>
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 --master_port 12345 --use_env main.py --model shvit_s2 --data-path $PATH_TO_IMAGENET --dist-eval --weight-decay 0.032
-```
-</details>
-
-<details>
-<summary>
-SHViT-S3
-</summary>
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 --master_port 12345 --use_env main.py --model shvit_s3 --data-path $PATH_TO_IMAGENET --dist-eval --weight-decay 0.035
-```
-</details>
-
-<details>
-<summary>
-SHViT-S4
-</summary>
-
-```
-python -m torch.distributed.launch --nproc_per_node=8 --master_port 12345 --use_env main.py --model shvit_s4 --data-path $PATH_TO_IMAGENET --dist-eval --weight-decay 0.03 --input-size 256
-```
-</details>
 
 
-## Evaluation
-Run the following command to evaluate a pre-trained SHViT-S4 on ImageNet-1K validation set with a single GPU:
-```bash
-python main.py --eval --model shvit_s4 --resume ./shvit_s4.pth --data-path $PATH_TO_IMAGENET --input-size 256
-```
-
-
-## Latency Measurement
-Run the following command to compare the throughputs on GPU/CPU:
-
-```
-python speed_test.py
-```
-
-The mobile latency reported in SHViT for iPhone 12 uses the deployment tool from [XCode 14](https://developer.apple.com/videos/play/wwdc2022/10027/).
-
-export the model to Core ML model
-
-```
-python export_model.py --variant shvit_s4 --output-dir /path/to/save/exported_model \
---checkpoint /path/to/pretrained_checkpoints/shvit_s4.pth
-```
 
 ## Citation
 If our work or code help your work, please cite our paper:
 ```
-@inproceedings{yun2024shvit,
-  author={Yun, Seokju and Ro, Youngmin},
-  title={SHViT: Single-Head Vision Transformer with Memory Efficient Macro Design},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages={5756--5767},
-  year={2024}
+@article{setyawan2025microvit,
+  title={MicroViT: A Vision Transformer with Low Complexity Self Attention for Edge Device},
+  author={Setyawan, Novendra and Sun, Chi-Chia and Hsu, Mao-Hsiu and Kuo, Wen-Kai and Hsieh, Jun-Wei},
+  journal={arXiv preprint arXiv:2502.05800},
+  year={2025}
 }
 ```
 
