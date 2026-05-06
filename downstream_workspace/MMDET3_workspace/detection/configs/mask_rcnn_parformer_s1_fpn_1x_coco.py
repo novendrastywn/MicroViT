@@ -1,0 +1,33 @@
+_base_ = [
+    './_base_/models/mask-rcnn_r50_fpn.py',
+    './_base_/datasets/coco_instance.py',
+    './_base_/schedules/schedule_1x.py',
+    './_base_/default_runtime.py'
+]
+model = dict(
+    backbone=dict(        
+        type='parformer_s1',
+        style='pytorch',
+        # pretrained=pretrained,
+        frozen_stages=-1,
+        ),
+    neck=dict(
+        type='EfficientFPN',
+        in_channels=[192, 384, 448],
+        out_channels=256,
+        start_level=0,
+        num_outs=5,
+        num_extra_trans_convs=2,
+        ))
+
+#optimizer
+optim_wrapper = dict(
+    _delete_=True, 
+    type='OptimWrapper',
+    optimizer = dict(type='AdamW', lr=0.0001, weight_decay=0.025) # weight_decay=0.0001
+    )
+optimizer_config = dict(grad_clip=None)
+train_dataloader = dict(batch_size=4, num_workers=4,)
+default_hooks = dict(checkpoint=dict(interval=1, max_keep_ckpts=2))  # only keep latest 2 checkpoints
+# data = dict(samples_per_gpu=6, workers_per_gpu=2)
+

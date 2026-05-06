@@ -1,0 +1,2 @@
+python tools/analyze_logs.py plot_curve ./work_dirs/bdd100k_fcos_r50_fpn_1x/20250105_134239/vis_data/20250105_134239.json \
+       --keys loss --out ./work_dirs/bdd100k_fcos_r50_fpn_1x/20250105_134239/vis_data/losses.pdf
