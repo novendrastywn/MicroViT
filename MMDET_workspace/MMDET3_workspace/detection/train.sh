@@ -1,1 +1,0 @@
-./dist_train.sh ./configs/retinanet_microvit_s3_fpn_1x_coco.py 4
