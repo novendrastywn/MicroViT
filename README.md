@@ -43,9 +43,9 @@ The Vision Transformer (ViT) has demonstrated state-of-the-art performance in va
 
 | Model           | Res. | Param (M) | FLOPs (M) | Top-1 (%) | Latency (ms) | Throughput (Img/s) | Energy (mJ/Img) | η (%/(mJ/Img)) | Weights |
 |:---             |:---: |:---:      |:---:      |:---:      |:---:         |:---:               |:---:            |:---:           |:---:    |
-| MicroViTv2-S1   | 224  | 6.7       | 250       | 72.7      | 4.84         | 2367.6             | 10.9            | **6.67**       | _coming soon_ |
-| MicroViTv2-S2   | 224  | 12.7      | 407       | 75.1      | 5.25         | 1883.3             | 14.9            | **5.04**       | _coming soon_ |
-| MicroViTv2-S3   | 224  | 17.0      | 676       | 77.4      | 5.90         | 1335.5             | 22.5            | **3.44**       | _coming soon_ |
+| MicroViTv2-S1   | 224  | 6.7       | 250       | 72.7      | 4.84         | 2367.6             | 10.9            | **6.67**       | [model](https://huggingface.co/novendrastywn/MicroViT/resolve/main/MicroViTv2-S1.pth) |
+| MicroViTv2-S2   | 224  | 12.7      | 407       | 75.1      | 5.25         | 1883.3             | 14.9            | **5.04**       | [model](https://huggingface.co/novendrastywn/MicroViT/resolve/main/MicroViTv2-S2.pth) |
+| MicroViTv2-S3   | 224  | 17.0      | 676       | 77.4      | 5.90         | 1335.5             | 22.5            | **3.44**       | [model](https://huggingface.co/novendrastywn/MicroViT/resolve/main/MicroViTv2-S3.pth) |
 
 ### MicroViTv1 (ISCAS 2025)
 
